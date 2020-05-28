@@ -1,0 +1,12 @@
+jhipster --yarn --skip-server --db=postgresql --auth=oauth2
+
+? [Beta] Do you want to make it reactive with Spring WebFlux? No
+? What is the base name of your application? BrandenPortalClient
+? Which *Framework* would you like to use for the client? Angular
+? Would you like to use a Bootswatch theme (https://bootswatch.com/)? Flatly
+? Choose a Bootswatch variant navbar theme (https://bootswatch.com/)? Primary
+? Would you like to enable internationalization support? Yes
+? Please choose the native language of the application Portuguese
+? Please choose additional languages to install English
+? Besides JUnit and Jest, which testing frameworks would you like to use? Protractor
+? Would you like to install other generators from the JHipster Marketplace? No

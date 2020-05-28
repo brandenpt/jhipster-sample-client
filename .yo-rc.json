@@ -1,0 +1,28 @@
+{
+  "generator-jhipster": {
+    "jhipsterVersion": "6.9.0",
+    "applicationType": "monolith",
+    "baseName": "BrandenPortalClient",
+    "useSass": true,
+    "clientPackageManager": "yarn",
+    "clientFramework": "angularX",
+    "clientTheme": "flatly",
+    "clientThemeVariant": "primary",
+    "authenticationType": "oauth2",
+    "cacheProvider": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "creationTimestamp": 1590659637548,
+    "testFrameworks": ["protractor"],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "pt-pt",
+    "languages": ["pt-pt", "en"],
+    "blueprints": [],
+    "skipServer": true
+  }
+}
