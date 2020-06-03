@@ -64,7 +64,7 @@ describe('Service Tests', () => {
             name: 'server.ports',
             properties: {
               'local.server.port': {
-                value: '8081',
+                value: '8080',
               },
             },
           },

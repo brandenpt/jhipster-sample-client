@@ -1,7 +1,7 @@
 {
-  "name": "branden-portal-client",
+  "name": "branden-portal",
   "version": "0.0.1-SNAPSHOT",
-  "description": "Description for BrandenPortalClient",
+  "description": "Description for BrandenPortal",
   "private": true,
   "license": "UNLICENSED",
   "cacheDirectories": [
@@ -31,7 +31,6 @@
     "ngx-webstorage": "5.0.0",
     "rxjs": "6.5.5",
     "swagger-ui-dist": "3.25.1",
-    "sonar-scanner": "3.1.0",
     "tslib": "1.11.1",
     "zone.js": "0.10.3"
   },
@@ -120,7 +119,6 @@
     "e2e": "protractor src/test/javascript/protractor.conf.js",
     "postinstall": "node node_modules/protractor/bin/webdriver-manager update --gecko false",
     "start": "yarn run webpack:dev",
-    "sonar": "sonar-scanner",
     "start-tls": "yarn run webpack:dev --env.tls",
     "serve": "yarn run start",
     "build": "yarn run webpack:prod",

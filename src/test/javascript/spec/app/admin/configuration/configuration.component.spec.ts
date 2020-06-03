@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { of } from 'rxjs';
 
-import { BrandenPortalClientTestModule } from '../../../test.module';
+import { BrandenPortalTestModule } from '../../../test.module';
 import { ConfigurationComponent } from 'app/admin/configuration/configuration.component';
 import { ConfigurationService, Bean, PropertySource } from 'app/admin/configuration/configuration.service';
 
@@ -13,7 +13,7 @@ describe('Component Tests', () => {
 
     beforeEach(async(() => {
       TestBed.configureTestingModule({
-        imports: [BrandenPortalClientTestModule],
+        imports: [BrandenPortalTestModule],
         declarations: [ConfigurationComponent],
         providers: [ConfigurationService],
       })
@@ -45,7 +45,7 @@ describe('Component Tests', () => {
             name: 'server.ports',
             properties: {
               'local.server.port': {
-                value: '8081',
+                value: '8080',
               },
             },
           },

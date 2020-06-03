@@ -1,6 +1,6 @@
 {
   "global": {
-    "title": "BrandenPortalClient",
+    "title": "BrandenPortal",
     "browsehappy": "Está a usar um navegador <strong>desatualizado</strong>. Por favor <a href=\"http://browsehappy.com/?locale=pt_PT\">atualize o seu navegador</a> para ter uma experiência melhor.",
     "menu": {
       "home": "Início",
@@ -20,6 +20,7 @@
       },
       "admin": {
         "main": "Administração",
+        "gateway": "Gateway",
         "userManagement": "Gestão de utilizadores",
         "tracker": "Atividade dos utilizadores",
         "metrics": "Métricas",

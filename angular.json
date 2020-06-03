@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "branden-portal-client": {
+    "branden-portal": {
       "root": "",
       "sourceRoot": "src/main/webapp",
       "projectType": "application",
@@ -29,7 +29,7 @@
       "architect": {}
     }
   },
-  "defaultProject": "branden-portal-client",
+  "defaultProject": "branden-portal",
   "cli": {
     "packageManager": "yarn"
   }

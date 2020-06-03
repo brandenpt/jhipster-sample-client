@@ -1,20 +1,35 @@
 {
   "generator-jhipster": {
+    "promptValues": {
+      "packageName": "pt.branden.brandenportal",
+      "nativeLanguage": "pt-pt"
+    },
     "jhipsterVersion": "6.9.0",
-    "applicationType": "monolith",
-    "baseName": "BrandenPortalClient",
+    "applicationType": "gateway",
+    "baseName": "BrandenPortal",
+    "packageName": "pt.branden.brandenportal",
+    "packageFolder": "pt/branden/brandenportal",
+    "serverPort": "8081",
+    "authenticationType": "oauth2",
+    "cacheProvider": "infinispan",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "gradle",
+    "enableSwaggerCodegen": false,
+    "embeddableLaunchScript": false,
     "useSass": true,
     "clientPackageManager": "yarn",
     "clientFramework": "angularX",
     "clientTheme": "flatly",
     "clientThemeVariant": "primary",
-    "authenticationType": "oauth2",
-    "cacheProvider": "no",
-    "databaseType": "sql",
-    "devDatabaseType": "postgresql",
-    "prodDatabaseType": "postgresql",
-    "creationTimestamp": 1590659637548,
-    "testFrameworks": ["protractor"],
+    "creationTimestamp": 1591176622364,
+    "testFrameworks": ["gatling", "cucumber", "protractor"],
     "jhiPrefix": "jhi",
     "entitySuffix": "",
     "dtoSuffix": "DTO",
@@ -22,7 +37,6 @@
     "enableTranslation": true,
     "nativeLanguage": "pt-pt",
     "languages": ["pt-pt", "en"],
-    "blueprints": [],
-    "skipServer": true
+    "blueprints": []
   }
 }

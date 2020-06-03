@@ -1,6 +1,10 @@
-# BrandenPortalClient
+# BrandenPortal
 
 This application was generated using JHipster 6.9.0, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v6.9.0](https://www.jhipster.tech/documentation-archive/v6.9.0).
+
+This is a "gateway" application intended to be part of a microservice architecture, please refer to the [Doing microservices with JHipster][] page of the documentation for more information.
+
+This application is configured for Service Discovery and Configuration with . On launch, it will refuse to start if it is not able to connect to .
 
 ## Development
 
@@ -21,6 +25,7 @@ We use yarn scripts and [Webpack][] as our build system.
 Run the following commands in two separate terminals to create a blissful development experience where your browser
 auto-refreshes when files change on your hard drive.
 
+    ./gradlew -x webpack
     yarn start
 
 Yarn is also used to manage CSS and JavaScript dependencies used in this application. You can upgrade dependencies by
@@ -78,7 +83,7 @@ spring:
 security:
 ```
 
-Create an OIDC App in Okta to get a `{clientId}` and `{clientSecret}`. To do this, log in to your Okta Developer account and navigate to **Applications** > **Add Application**. Click **Web** and click the **Next** button. Give the app a name you’ll remember, specify `http://localhost:8081` as a Base URI, and `http://localhost:8081/login/oauth2/code/oidc` as a Login Redirect URI. Click **Done**, then Edit and add `http://localhost:8081` as a Logout redirect URI. Copy and paste the client ID and secret into your `application.yml` file.
+Create an OIDC App in Okta to get a `{clientId}` and `{clientSecret}`. To do this, log in to your Okta Developer account and navigate to **Applications** > **Add Application**. Click **Web** and click the **Next** button. Give the app a name you’ll remember, specify `http://localhost:8080` as a Base URI, and `http://localhost:8080/login/oauth2/code/oidc` as a Login Redirect URI. Click **Done**, then Edit and add `http://localhost:8080` as a Logout redirect URI. Copy and paste the client ID and secret into your `application.yml` file.
 
 Create a `ROLE_ADMIN` and `ROLE_USER` group and add users into them. Modify e2e tests to use this account when running integration tests. You'll need to change credentials in `src/test/javascript/e2e/account/account.spec.ts` and `src/test/javascript/e2e/admin/administration.spec.ts`.
 
@@ -149,18 +154,24 @@ will generate few files:
 
 ### Packaging as jar
 
-To build the final jar and optimize the BrandenPortalClient application for production, run:
+To build the final jar and optimize the BrandenPortal application for production, run:
+
+    ./gradlew -Pprod clean bootJar
 
 This will concatenate and minify the client CSS and JavaScript files. It will also modify `index.html` so it references these new files.
 To ensure everything worked, run:
 
-Then navigate to [http://localhost:](http://localhost:) in your browser.
+    java -jar build/libs/*.jar
+
+Then navigate to [http://localhost:8081](http://localhost:8081) in your browser.
 
 Refer to [Using JHipster in production][] for more details.
 
 ### Packaging as war
 
 To package your application as a war in order to deploy it to an application server, run:
+
+    ./gradlew -Pprod -Pwar clean bootWar
 
 ## Testing
 
@@ -184,9 +195,13 @@ Sonar is used to analyse code quality. You can start a local Sonar server (acces
 docker-compose -f src/main/docker/sonar.yml up -d
 ```
 
-You can run a Sonar analysis with using the [sonar-scanner](https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner).
+You can run a Sonar analysis with using the [sonar-scanner](https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner) or by using the gradle plugin.
 
 Then, run a Sonar analysis:
+
+```
+./gradlew -Pprod clean check jacocoTestReport sonarqube
+```
 
 For more information, refer to the [Code quality page][].
 
@@ -205,6 +220,8 @@ To stop it and remove the container, run:
 You can also fully dockerize your application and all the services that it depends on.
 To achieve this, first build a docker image of your app by running:
 
+    ./gradlew bootJar -Pprod jibDockerBuild
+
 Then run:
 
     docker-compose -f src/main/docker/app.yml up -d
@@ -217,6 +234,7 @@ To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`)
 
 [jhipster homepage and latest documentation]: https://www.jhipster.tech
 [jhipster 6.9.0 archive]: https://www.jhipster.tech/documentation-archive/v6.9.0
+[doing microservices with jhipster]: https://www.jhipster.tech/documentation-archive/v6.9.0/microservices-architecture/
 [using jhipster in development]: https://www.jhipster.tech/documentation-archive/v6.9.0/development/
 [using docker and docker-compose]: https://www.jhipster.tech/documentation-archive/v6.9.0/docker-compose
 [using jhipster in production]: https://www.jhipster.tech/documentation-archive/v6.9.0/production/

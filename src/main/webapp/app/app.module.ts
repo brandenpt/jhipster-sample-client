@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import './vendor';
-import { BrandenPortalClientSharedModule } from 'app/shared/shared.module';
-import { BrandenPortalClientCoreModule } from 'app/core/core.module';
-import { BrandenPortalClientAppRoutingModule } from './app-routing.module';
-import { BrandenPortalClientHomeModule } from './home/home.module';
-import { BrandenPortalClientEntityModule } from './entities/entity.module';
+import { BrandenPortalSharedModule } from 'app/shared/shared.module';
+import { BrandenPortalCoreModule } from 'app/core/core.module';
+import { BrandenPortalAppRoutingModule } from './app-routing.module';
+import { BrandenPortalHomeModule } from './home/home.module';
+import { BrandenPortalEntityModule } from './entities/entity.module';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { MainComponent } from './layouts/main/main.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
@@ -18,14 +18,14 @@ import { ErrorComponent } from './layouts/error/error.component';
 @NgModule({
   imports: [
     BrowserModule,
-    BrandenPortalClientSharedModule,
-    BrandenPortalClientCoreModule,
-    BrandenPortalClientHomeModule,
+    BrandenPortalSharedModule,
+    BrandenPortalCoreModule,
+    BrandenPortalHomeModule,
     // jhipster-needle-angular-add-module JHipster will add new module here
-    BrandenPortalClientEntityModule,
-    BrandenPortalClientAppRoutingModule,
+    BrandenPortalEntityModule,
+    BrandenPortalAppRoutingModule,
   ],
   declarations: [MainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
   bootstrap: [MainComponent],
 })
-export class BrandenPortalClientAppModule {}
+export class BrandenPortalAppModule {}
